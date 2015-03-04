@@ -1,0 +1,14 @@
+<h1>Welcome to my To-Do List!</h1>
+
+<h2>My to-do list items:</h2>
+
+<ul id="todo-list">
+  <% @items.each do |item| %>
+    <li class="item"><%= item.name %></li>
+  <% end %>
+</ul>
+
+<form id="new_item" action="/items" method="post">
+  <input type="text" name="item[name]" />
+  <input type="submit" />
+</form>
