@@ -4,11 +4,11 @@
 
 <ul id="todo-list">
   <% @items.each do |item| %>
-    <li class="item"><%= item.name %></li>
+    <%= erb :"_item", locals: {item: item} %>
   <% end %>
 </ul>
 
 <form id="new_item" action="/items" method="post">
-  <input type="text" name="item[name]" />
+  <input id="item_name" type="text" name="item[name]" />
   <input type="submit" />
 </form>
